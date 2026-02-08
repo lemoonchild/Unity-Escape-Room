@@ -31,24 +31,9 @@ public class FinishLine : MonoBehaviour
             winScreen.SetActive(true);
             
             Time.timeScale = 0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
-    }
-    
-    public void RestartLevel()
-    {
-        Time.timeScale = 1f; 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
-    }
-    
-    public void QuitGame()
-    {
-        Time.timeScale = 1f;
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #else
-        Application.Quit();
-        #endif
     }
 }
