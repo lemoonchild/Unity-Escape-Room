@@ -6,6 +6,11 @@ public class Food : MonoBehaviour
     [SerializeField] LevelManager levelManager; 
     [SerializeField] LevelManagerOpenDoor openDoorManager; 
     
+    [Header("Audio")]
+    [SerializeField] AudioClip pickupSound; 
+
+    private AudioSource audioSource;
+
     void Update()
     {
         transform.Rotate(0, 45 * Time.deltaTime, 0);
@@ -22,6 +27,9 @@ public class Food : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, 0.2f);
+
             if (levelManager != null)
             {
                 levelManager.IncreaseScore();

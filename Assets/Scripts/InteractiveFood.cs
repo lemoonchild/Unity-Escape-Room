@@ -12,6 +12,11 @@ public class InteractiveFood : MonoBehaviour
     [Header("Object Settings")]
     public string objectID;
     
+    [Header("Audio")]
+    [SerializeField] AudioClip pickupSound;
+    [SerializeField] AudioClip dropSound;
+    [SerializeField][Range(0f, 1f)] float volume = 0.5f;
+
     private void Start()
     {
         originalPosition = transform.position;
@@ -41,12 +46,22 @@ public class InteractiveFood : MonoBehaviour
     public void OnPickedUp()
     {
         isBeingHeld = true;
+
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+        }
     }
     
     public void OnDropped()
     {
         isBeingHeld = false;
         originalPosition = transform.position;
+
+        if (dropSound != null)
+        {
+            AudioSource.PlayClipAtPoint(dropSound, transform.position, volume);
+        }
     }
 
     public void OnPlacedOnCarpet() 
@@ -60,5 +75,10 @@ public class InteractiveFood : MonoBehaviour
     {
         isOnCarpet = false;
         originalPosition = transform.position;
+
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+        }
     }
 }

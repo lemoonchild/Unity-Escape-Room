@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: f641699933f7c8d47a14c58615e9ceb2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - levelManager: {instanceID: 0}
+  - openDoorManager: {instanceID: 0}
+  - pickupSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

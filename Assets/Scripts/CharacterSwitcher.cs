@@ -18,8 +18,6 @@ public class CharacterSpawner : MonoBehaviour
             Destroy(currentCharacter);
             
             GameObject newChar = Instantiate(newCharacterPrefab, spawnPos, spawnRot);
-            
-            Debug.Log("✓ New character spawned!");
         }
     }
 }
