@@ -33,7 +33,7 @@ This is a **5-level escape room game** where the player must navigate through ch
 
 ## Gameplay Video
 
-[Watch the full walkthrough here]
+https://github.com/user-attachments/assets/0735946c-bf00-4f41-95df-c14a5038de22
 
 ---
 
